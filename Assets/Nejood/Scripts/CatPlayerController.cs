@@ -11,6 +11,7 @@ public class CatPlayerController : MonoBehaviour
     public float gravity = -9.81f;
     public float dashDistance = 10f;
     public float idleTimeout = 5f;
+    public float idleSwitchInterval = 5f;
 
     [Header("Camera Settings")]
     public Transform cameraTransform;
@@ -30,7 +31,10 @@ public class CatPlayerController : MonoBehaviour
     private bool canDash = false;
     private bool canRun = false;
     private float lastMovementTime;
+    private float idleTimer;
+    private float idleSwitchTimer;
     private bool isIdle = false;
+    private bool idleToggle = false;
 
     void OnEnable()
     {
@@ -138,11 +142,29 @@ public class CatPlayerController : MonoBehaviour
 
     void HandleIdleAnimation()
     {
-        if (!isIdle && Time.time - lastMovementTime > idleTimeout)
+         if (inputMovement.magnitude > 0.1f)
+    {
+        isIdle = false;
+        animator.SetFloat("IdleVariant", 0);
+        idleTimer = 0f;
+        idleSwitchTimer = 0f;
+        return;
+    }
+
+    idleTimer += Time.deltaTime;
+
+    if (idleTimer > idleTimeout)
+    {
+        isIdle = true;
+        idleSwitchTimer += Time.deltaTime;
+
+        if (idleSwitchTimer > idleSwitchInterval)
         {
-            isIdle = true;
-            animator.SetTrigger("LongIdle");
+            idleToggle = !idleToggle;
+            animator.SetFloat("IdleVariant", idleToggle ? 1f : 0f);
+            idleSwitchTimer = 0f;
         }
+    }
     }
 
     public void UnlockDash()
