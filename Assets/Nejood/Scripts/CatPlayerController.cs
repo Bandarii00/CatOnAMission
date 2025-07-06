@@ -105,13 +105,6 @@ public class CatPlayerController : MonoBehaviour
         lastMovementTime = Time.time;
         isIdle = false;
     }
-    else
-    {
-        Vector3 camForward = cameraTransform.forward;
-        camForward.y = 0;
-        if (camForward.sqrMagnitude > 0.1f)
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(camForward), Time.deltaTime * 5f);
-    }
 
     animator.SetFloat("Speed", currentSpeed);
 
