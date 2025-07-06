@@ -28,8 +28,8 @@ public class CatPlayerController : MonoBehaviour
     private Vector2 inputMovement;
     private Vector3 velocity;
     private bool isGrounded;
-    private bool canDash = false;
-    private bool canRun = false;
+    private bool canDash = true;
+    private bool canRun = true;
     private float lastMovementTime;
     private float idleTimer;
     private float idleSwitchTimer;
@@ -85,60 +85,70 @@ public class CatPlayerController : MonoBehaviour
         Debug.Log($"Grounded: {controller.isGrounded}, Y: {transform.position.y}");
     }
 
-    void HandleMovement()
+   void HandleMovement()
+{
+    Vector3 moveDirection = new Vector3(inputMovement.x, 0f, inputMovement.y);
+    moveDirection = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0) * moveDirection;
+    moveDirection.Normalize();
+
+    float targetSpeed = canRun && runAction.action.IsPressed() ? runSpeed : walkSpeed;
+    float currentSpeed = moveDirection.magnitude * targetSpeed;
+
+    Vector3 motion = moveDirection * targetSpeed;
+    motion.y = velocity.y;
+    controller.Move(motion * Time.deltaTime);
+
+    if (moveDirection.magnitude > 0.1f)
     {
-        Vector3 moveDirection = new Vector3(inputMovement.x, 0f, inputMovement.y);
-        moveDirection = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0) * moveDirection;
-        moveDirection.Normalize();
-
-        float speed = canRun && runAction.action.IsPressed() ? runSpeed : walkSpeed;
-        Vector3 motion = moveDirection * speed;
-        motion.y = velocity.y;
-        controller.Move(motion * Time.deltaTime);
-
-        if (moveDirection.magnitude > 0.1f)
-        {
-            Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
-            lastMovementTime = Time.time;
-            isIdle = false;
-        }
-        else
-        {
-            Vector3 camForward = cameraTransform.forward;
-            camForward.y = 0;
-            if (camForward.sqrMagnitude > 0.1f)
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(camForward), Time.deltaTime * 5f);
-        }
-
-        animator.SetFloat("Speed", moveDirection.magnitude);
-
-        if (jumpAction.action.WasPressedThisFrame() && isGrounded)
-        {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            animator.SetTrigger("Jump");
-        }
-
-        if (dashAction.action.WasPressedThisFrame() && canDash)
-        {
-            Vector3 dashDirection = transform.forward;
-            controller.Move(dashDirection * dashDistance);
-            animator.SetTrigger("Dash");
-            canDash = false;
-        }
+        Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+        lastMovementTime = Time.time;
+        isIdle = false;
     }
+    else
+    {
+        Vector3 camForward = cameraTransform.forward;
+        camForward.y = 0;
+        if (camForward.sqrMagnitude > 0.1f)
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(camForward), Time.deltaTime * 5f);
+    }
+
+    animator.SetFloat("Speed", currentSpeed);
+
+    if (jumpAction.action.WasPressedThisFrame() && isGrounded)
+    {
+        velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+    }
+
+    animator.SetFloat("VerticalSpeed", velocity.y);
+
+    if (dashAction.action.WasPressedThisFrame() && canDash)
+    {
+        Vector3 dashDirection = transform.forward;
+        controller.Move(dashDirection * dashDistance);
+        animator.SetTrigger("Dash");
+    }
+}
+
 
     void ApplyGravity()
+{
+    if (controller.isGrounded)
     {
-        if (controller.isGrounded && velocity.y < 0f)
+        if (velocity.y < 0f)
         {
-            velocity.y = -2f;
+            velocity.y = -0.1f; 
         }
-        else
-        {
-            velocity.y += gravity * Time.deltaTime;
+
+        animator.SetFloat("VerticalSpeed", 0f); 
         }
+    else
+    {
+        velocity.y += gravity * Time.deltaTime;
+        animator.SetFloat("VerticalSpeed", velocity.y); 
     }
+}
+
 
     void HandleIdleAnimation()
     {
