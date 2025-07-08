@@ -28,7 +28,7 @@ public class CatPlayerController : MonoBehaviour
     private Vector2 inputMovement;
     private Vector3 velocity;
     private bool isGrounded;
-    private bool canDash = true;
+    private bool canDash = false;
     private bool canRun = true;
     private float lastMovementTime;
     private float idleTimer;
@@ -115,11 +115,12 @@ public class CatPlayerController : MonoBehaviour
 
     animator.SetFloat("VerticalSpeed", velocity.y);
 
-    if (dashAction.action.WasPressedThisFrame() && canDash)
-    {
-        Vector3 dashDirection = transform.forward;
-        controller.Move(dashDirection * dashDistance);
-        animator.SetTrigger("Dash");
+        if (dashAction.action.WasPressedThisFrame() && canDash)
+        {
+            Vector3 dashDirection = transform.forward;
+            controller.Move(dashDirection * dashDistance);
+            animator.SetTrigger("Dash");
+            canDash = false;
     }
 }
 
