@@ -63,7 +63,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4472815452338060655}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.023828741, y: -0.000000030025735, z: -7.156785e-10, w: 0.9997161}
+  m_LocalRotation: {x: -0.03788187, y: 0.000000024709587, z: 9.367177e-10, w: 0.99928224}
   m_LocalPosition: {x: -13.12, y: 1.9191263, z: -13.379}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   Lens:
     FieldOfView: 40
     OrthographicSize: 5
-    NearClipPlane: 0.1
+    NearClipPlane: 0.15
     FarClipPlane: 1000
     Dutch: 0
     ModeOverride: 0
@@ -295,24 +295,24 @@ MonoBehaviour:
   CollideAgainst:
     serializedVersion: 2
     m_Bits: 1
-  IgnoreTag: 
+  IgnoreTag: Enemy
   TransparentLayers:
     serializedVersion: 2
-    m_Bits: 0
-  MinimumDistanceFromTarget: 0.3
+    m_Bits: 8
+  MinimumDistanceFromTarget: 0.4
   AvoidObstacles:
     Enabled: 1
     DistanceLimit: 0
     MinimumOcclusionTime: 0
-    CameraRadius: 0.4
+    CameraRadius: 0.1
     UseFollowTarget:
       Enabled: 0
       YOffset: 0
     Strategy: 0
-    MaximumEffort: 4
+    MaximumEffort: 3
     SmoothingTime: 0
     Damping: 0.4
-    DampingWhenOccluded: 0.2
+    DampingWhenOccluded: 0.35
   ShotQualityEvaluation:
     Enabled: 0
     OptimalDistance: 10
@@ -388,6 +388,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eda8c453fa28a2e4994805ef1fff1b61, type: 3}
       insertIndex: -1
       addedObject: {fileID: 527836974278372308}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eda8c453fa28a2e4994805ef1fff1b61, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7571070832653619495}
   m_SourcePrefab: {fileID: 100100000, guid: eda8c453fa28a2e4994805ef1fff1b61, type: 3}
 --- !u!4 &8267562667406747548 stripped
 Transform:
@@ -442,9 +445,9 @@ MonoBehaviour:
   gravity: -9.81
   dashDistance: 7
   idleTimeout: 10
-  idleSwitchInterval: 6
+  idleSwitchInterval: 7.5
   cameraTransform: {fileID: 2459904308868278337}
-  animator: {fileID: 0}
+  animator: {fileID: 527836974278372308}
   moveAction: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   lookAction: {fileID: -5630151704836100654, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   jumpAction: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
@@ -472,3 +475,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7571070832653619495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8788661276411641126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4de1d3e97d8507c408ac3b1aadc9a7e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -7,11 +7,12 @@ TagManager:
   - HidingSpot
   - Floor
   - Collectible
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ignore
   - Water
   - UI
   - 
