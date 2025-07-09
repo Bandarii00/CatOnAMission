@@ -5,7 +5,7 @@ public class StartController : MonoBehaviour
 {
     public void OnStartClick()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Game");
     }
 
     public void OnExitClick(){

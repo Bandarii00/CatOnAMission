@@ -74,7 +74,7 @@ public class EnemyAI : MonoBehaviour
 
     private System.Collections.IEnumerator ResumeAfterHide()
     {
-        yield return new WaitForSeconds(3f); 
+        yield return new WaitForSeconds(3f);
         isWaitingAfterHide = false;
         GoToPatrolTarget();
     }
@@ -109,4 +109,12 @@ public class EnemyAI : MonoBehaviour
             player = null;
         }
     }
+    
+    public void ResetChase()
+{
+    isChasing = false;
+    player = null;
+    agent.ResetPath();
+    GoToPatrolTarget();
+}
 }

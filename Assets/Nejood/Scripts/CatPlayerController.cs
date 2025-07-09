@@ -60,9 +60,6 @@ public class CatPlayerController : MonoBehaviour
         controller.stepOffset = 0.3f;
         controller.slopeLimit = 50f;
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
         if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 5f))
 {
     Vector3 groundPos = hit.point;
