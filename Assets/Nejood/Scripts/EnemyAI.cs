@@ -26,7 +26,6 @@ public class EnemyAI : MonoBehaviour
 
         if (player != null)
         {
-            // Check if player is inside any hiding spot
             isPlayerHiding = IsPlayerInHiding();
 
             if (isPlayerHiding)
@@ -75,7 +74,7 @@ public class EnemyAI : MonoBehaviour
 
     private System.Collections.IEnumerator ResumeAfterHide()
     {
-        yield return new WaitForSeconds(2f); // Adjust to match animation length
+        yield return new WaitForSeconds(3f); 
         isWaitingAfterHide = false;
         GoToPatrolTarget();
     }

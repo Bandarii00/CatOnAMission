@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GeneralStates:
     LoadedProjectGUID:
-      valueInternal: 9b8a75d8cc358794a87b81cc36780681
+      valueInternal: b14d5c1aa59062743850580d951e4b11
     RecentlyOpenedProjectPath:
       valueInternal: Assets\Nejood\Assets
     RecentlyOpenedProjectGUIDsList:
+    - valueInternal: b14d5c1aa59062743850580d951e4b11
     - valueInternal: 9b8a75d8cc358794a87b81cc36780681
     - valueInternal: 52c91260b7480d24ea9e0946f5cfd2a9
