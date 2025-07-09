@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrolTarget: {fileID: 784513105}
-  stoppingDistance: 1.5
+  stoppingDistance: 1.8
   hideAnimationTrigger: FoundHidingPlayer
 --- !u!136 &159049745
 CapsuleCollider:
@@ -301,7 +301,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 159049742}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 2cc4654574439624f94a5f6b1d6499b4, type: 2}
   m_CullingMode: 0
@@ -838,7 +838,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626855300}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 
