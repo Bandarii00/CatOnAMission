@@ -1,0 +1,274 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5832608613537643048
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c0e5e0e22f1794eb153773de80df0b, type: 3}
+  m_Name: ScreenSpaceSunShaftsVol
+  m_EditorClassIdentifier: 
+  active: 1
+  sunShaftsMaterial:
+    m_OverrideState: 1
+    m_Value: {fileID: 0}
+  SunShaftsNoiseMaterial:
+    m_OverrideState: 1
+    m_Value: {fileID: 0}
+  filterMode:
+    m_OverrideState: 0
+    m_Value: 0
+  resolutionDivider:
+    m_OverrideState: 0
+    m_Value: 1
+  blendChoice:
+    m_OverrideState: 0
+    m_Value: 0
+  sunTransform:
+    m_OverrideState: 0
+    m_Value: {x: 0.43734813, y: 2.745402, z: 4.155899}
+  radialBlurIterations:
+    m_OverrideState: 0
+    m_Value: 2
+  variableRadial:
+    m_OverrideState: 0
+    m_Value: 0
+  sunColor:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    hdr: 0
+  sunThreshold:
+    m_OverrideState: 0
+    m_Value: {r: 0.87, g: 0.74, b: 0.65, a: 1}
+    hdr: 0
+  sunShaftBlurRadius:
+    m_OverrideState: 0
+    m_Value: 2.5
+  sunShaftIntensity:
+    m_OverrideState: 0
+    m_Value: 1.15
+  maxRadius:
+    m_OverrideState: 0
+    m_Value: 0.75
+  useDepthTexture:
+    m_OverrideState: 0
+    m_Value: 1
+  useNoise:
+    m_OverrideState: 0
+    m_Value: 0
+  MainTexFBM:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+  NoiseTex2:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+  Distort:
+    m_OverrideState: 0
+    m_Value: 0.5
+  HighLight:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    hdr: 0
+  NoiseColor:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    hdr: 0
+  noisePower:
+    m_OverrideState: 0
+    m_Value: 0.5
+  brightnessContrast:
+    m_OverrideState: 0
+    m_Value: {x: 1, y: 1, z: 1, w: 1}
+  noiseCloudSpeed:
+    m_OverrideState: 0
+    m_Value: {x: 1, y: 1, z: 1, w: 1}
+  m_Intencity:
+    m_OverrideState: 0
+    m_Value: 0
+--- !u!114 &-3773749610032569803
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1ca0bf71db899b4bb1ff22420ecdaf8, type: 3}
+  m_Name: VolumeHazyFogFxVol
+  m_EditorClassIdentifier: 
+  active: 1
+  fogMaterial:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+  blend:
+    m_OverrideState: 1
+    m_Value: 1
+  _FogColor:
+    m_OverrideState: 1
+    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 0.6509804}
+    hdr: 0
+  _useRadialDistance:
+    m_OverrideState: 1
+    m_Value: 0
+  _fadeToSkybox:
+    m_OverrideState: 1
+    m_Value: 1
+  noiseTexture:
+    m_OverrideState: 1
+    m_Value: {fileID: 0}
+    dimension: 1
+  _startDistance:
+    m_OverrideState: 1
+    m_Value: 30
+  _fogHeight:
+    m_OverrideState: 1
+    m_Value: 0.75
+  _fogDensity:
+    m_OverrideState: 1
+    m_Value: 1
+  _cameraRoll:
+    m_OverrideState: 1
+    m_Value: 0
+  _cameraDiff:
+    m_OverrideState: 1
+    m_Value: {x: 0, y: 0, z: 0, w: 0}
+  _cameraTiltSign:
+    m_OverrideState: 1
+    m_Value: 1
+  heightDensity:
+    m_OverrideState: 1
+    m_Value: 1
+  noiseDensity:
+    m_OverrideState: 1
+    m_Value: 1
+  noiseScale:
+    m_OverrideState: 1
+    m_Value: 1
+  noiseThickness:
+    m_OverrideState: 1
+    m_Value: 1
+  noiseSpeed:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 1, z: 1}
+  occlusionDrop:
+    m_OverrideState: 1
+    m_Value: 1
+  occlusionExp:
+    m_OverrideState: 1
+    m_Value: 1
+  noise3D:
+    m_OverrideState: 1
+    m_Value: 0
+  startDistance:
+    m_OverrideState: 1
+    m_Value: 1
+  luminance:
+    m_OverrideState: 1
+    m_Value: 1
+  lumFac:
+    m_OverrideState: 1
+    m_Value: 1
+  ScatterFac:
+    m_OverrideState: 1
+    m_Value: 1
+  TurbFac:
+    m_OverrideState: 1
+    m_Value: 1
+  HorizFac:
+    m_OverrideState: 1
+    m_Value: 1
+  turbidity:
+    m_OverrideState: 1
+    m_Value: 1
+  reileigh:
+    m_OverrideState: 1
+    m_Value: 1
+  mieCoefficient:
+    m_OverrideState: 1
+    m_Value: 1
+  mieDirectionalG:
+    m_OverrideState: 1
+    m_Value: 1
+  bias:
+    m_OverrideState: 1
+    m_Value: 1
+  contrast:
+    m_OverrideState: 1
+    m_Value: 1
+  TintColor:
+    m_OverrideState: 1
+    m_Value: {r: 1, g: 1, b: 1, a: 0.23529412}
+    hdr: 0
+  Sun:
+    m_OverrideState: 1
+    m_Value: {x: -0.83273757, y: 0.51649517, z: 0.19945174, w: 1}
+  FogSky:
+    m_OverrideState: 1
+    m_Value: 0
+  ClearSkyFac:
+    m_OverrideState: 1
+    m_Value: 1
+  PointL:
+    m_OverrideState: 1
+    m_Value: {x: 0, y: 0, z: 0, w: 0}
+  PointLParams:
+    m_OverrideState: 1
+    m_Value: {x: 0, y: 0, z: 0, w: 0}
+  enableWetnessHaze:
+    m_OverrideState: 1
+    m_Value: 1
+  _highQuality:
+    m_OverrideState: 1
+    m_Value: 1
+  _antiFlicker:
+    m_OverrideState: 1
+    m_Value: 1
+  allowHDR:
+    m_OverrideState: 1
+    m_Value: 1
+  thresholdLinear:
+    m_OverrideState: 1
+    m_Value: 0
+  _softKnee:
+    m_OverrideState: 1
+    m_Value: 0.5
+  _radius:
+    m_OverrideState: 1
+    m_Value: 0
+  _blurWeight:
+    m_OverrideState: 1
+    m_Value: 1
+  _intensity:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0, z: 0}
+  _fadeRamp:
+    m_OverrideState: 1
+    m_Value: {fileID: 0}
+    dimension: 1
+  _blurTint:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    hdr: 0
+  m_Intencity:
+    m_OverrideState: 1
+    m_Value: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
+  m_Name: SunRays
+  m_EditorClassIdentifier: 
+  components:
+  - {fileID: -5832608613537643048}
+  - {fileID: -3773749610032569803}
