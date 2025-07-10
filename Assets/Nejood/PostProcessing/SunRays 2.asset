@@ -606,7 +606,7 @@ MonoBehaviour:
     hdr: 0
   Sun:
     m_OverrideState: 1
-    m_Value: {x: -0.5057814, y: 0.33386675, z: 0.79543597, w: 1}
+    m_Value: {x: 0.11492308, y: 0.24772066, z: -0.9619913, w: 1}
   FogSky:
     m_OverrideState: 0
     m_Value: 1
@@ -1979,10 +1979,10 @@ MonoBehaviour:
     m_Value: 0
   sunTransform:
     m_OverrideState: 1
-    m_Value: {x: 14.820492, y: 5.4096007, z: 12.291841}
+    m_Value: {x: -12.273344, y: 22.935205, z: 42.7006}
   radialBlurIterations:
     m_OverrideState: 1
-    m_Value: 5
+    m_Value: 3
   variableRadial:
     m_OverrideState: 0
     m_Value: 0.223
