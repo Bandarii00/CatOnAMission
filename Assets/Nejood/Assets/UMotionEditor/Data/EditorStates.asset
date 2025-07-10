@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1252790098, guid: 448d62fcada76fd4ab5702190add98fd, type: 3}
+  m_Name: EditorStates
+  m_EditorClassIdentifier: 
+  GeneralStates:
+    LoadedProjectGUID:
+      valueInternal: b14d5c1aa59062743850580d951e4b11
+    RecentlyOpenedProjectPath:
+      valueInternal: Assets\Nejood\Assets
+    RecentlyOpenedProjectGUIDsList:
+    - valueInternal: b14d5c1aa59062743850580d951e4b11
+    - valueInternal: 9b8a75d8cc358794a87b81cc36780681
+    - valueInternal: 52c91260b7480d24ea9e0946f5cfd2a9
